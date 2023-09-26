@@ -24,7 +24,8 @@
     </style>
 </head>
 <body>
-    @Html.Partial("ChudePartia");
+    @Html.Action("ChuDePartial", "SachOnline");
+    @Html.Action("NhaXuatBanPartial", "SachOnline");
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
         @RenderBody();
     </div>

@@ -11,7 +11,7 @@ namespace SachOnline.Controllers
         // GET: SachOnline
         dbSachOnlineDataContext data = new dbSachOnlineDataContext();
 
-        private List<SACH>LaySachMoi(int count)
+        private List<SACH> LaySachMoi(int count)
         {
             return data.SACHes.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
         }
@@ -34,5 +34,23 @@ namespace SachOnline.Controllers
             var listNhaXuatBan = from cd in data.NhaXuatBans select cd;
             return PartialView(listNhaXuatBan);
         }
+
+        public ActionResult SachTheoChuDe(int id)
+        {
+            var sach = from s in data.SACHes where s.MaCD == id select s;
+            return View(sach);
+        }
+
+        public ActionResult SachTheoNhaXuatBan(int id)
+        {
+            var sach = from s in data.SACHes where s.MaNXB == id select s;
+            return View(sach);
+        }
+        public ActionResult ChiTietSach(int id)
+        {
+            var sach = from s in data.SACHes where s.MaSach == id select s;
+            return View(sach.Single());
+        }
+
     }
 }

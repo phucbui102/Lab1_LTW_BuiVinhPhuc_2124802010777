@@ -151,9 +151,9 @@ C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOn
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\bin\Newtonsoft.Json.xml
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\bin\Antlr3.Runtime.pdb
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.csproj.AssemblyReference.cache
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.csproj.CoreCompileInputs.cache
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.csproj.CopyComplete
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.dll
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.pdb
 C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\bin\BeginCollectionItem.dll
+C:\Users\1002b\source\repos\Lab1_LTW_BuiVinhPhuc_2124802010777\SachOnline\SachOnline\obj\Debug\SachOnline.csproj.AssemblyReference.cache

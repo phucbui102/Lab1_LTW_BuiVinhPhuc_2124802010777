@@ -6,27 +6,27 @@
       <Column Name="cd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.NhaXuatBan" Member="NhaXuatBans">
-    <Type Name="NhaXuatBan">
-      <Column Name="MaNXB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenNXB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SACH" Member="SACHes">
     <Type Name="SACH">
-      <Column Name="TenSach" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="MaSach" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="AnhBia" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MaCD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MaNXB" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="GiaBan" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="MoTa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NhaXuatBan" Member="NhaXuatBans">
+    <Type Name="NhaXuatBan">
+      <Column Name="MaNXB" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenNXB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
     <Type Name="KhachHang">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
@@ -34,6 +34,24 @@
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DienThoai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoDH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDH" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayGiaoHang" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HTGiaoHang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HTThanhToan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTDATHANG" Member="CTDATHANGs">
+    <Type Name="CTDATHANG">
+      <Column Name="SoDH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaSach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

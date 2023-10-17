@@ -24,7 +24,6 @@ namespace SachOnline.Controllers
         [HttpPost]
         public ActionResult Dangky(FormCollection collection, KhachHang kh)
         {
-
             var sHoTen = collection["HoTen"];
             var sTenDN = collection["TenDN"];
             var sMatKhau = collection["MatKhau"];
@@ -91,8 +90,6 @@ namespace SachOnline.Controllers
         {
             return View();
         }
-
-
 
         [HttpPost]
         public ActionResult DangNhap(FormCollection collection)

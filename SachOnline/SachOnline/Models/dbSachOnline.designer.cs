@@ -76,14 +76,6 @@ namespace SachOnline.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<NhaXuatBan> NhaXuatBans
-		{
-			get
-			{
-				return this.GetTable<NhaXuatBan>();
-			}
-		}
-		
 		public System.Data.Linq.Table<SACH> SACHes
 		{
 			get
@@ -92,11 +84,35 @@ namespace SachOnline.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<NhaXuatBan> NhaXuatBans
+		{
+			get
+			{
+				return this.GetTable<NhaXuatBan>();
+			}
+		}
+		
 		public System.Data.Linq.Table<KhachHang> KhachHangs
 		{
 			get
 			{
 				return this.GetTable<KhachHang>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DONDATHANG> DONDATHANGs
+		{
+			get
+			{
+				return this.GetTable<DONDATHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CTDATHANG> CTDATHANGs
+		{
+			get
+			{
+				return this.GetTable<CTDATHANG>();
 			}
 		}
 	}
@@ -141,51 +157,6 @@ namespace SachOnline.Models
 				if ((this._cd != value))
 				{
 					this._cd = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhaXuatBan")]
-	public partial class NhaXuatBan
-	{
-		
-		private int _MaNXB;
-		
-		private string _TenNXB;
-		
-		public NhaXuatBan()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNXB", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int MaNXB
-		{
-			get
-			{
-				return this._MaNXB;
-			}
-			set
-			{
-				if ((this._MaNXB != value))
-				{
-					this._MaNXB = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNXB", DbType="NVarChar(50)")]
-		public string TenNXB
-		{
-			get
-			{
-				return this._TenNXB;
-			}
-			set
-			{
-				if ((this._TenNXB != value))
-				{
-					this._TenNXB = value;
 				}
 			}
 		}
@@ -240,7 +211,7 @@ namespace SachOnline.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSach", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSach", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
 		public string TenSach
 		{
 			get
@@ -380,7 +351,7 @@ namespace SachOnline.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoTa", DbType="NVarChar(1000)")]
 		public string MoTa
 		{
 			get
@@ -417,6 +388,51 @@ namespace SachOnline.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NhaXuatBan")]
+	public partial class NhaXuatBan
+	{
+		
+		private int _MaNXB;
+		
+		private string _TenNXB;
+		
+		public NhaXuatBan()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaNXB", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int MaNXB
+		{
+			get
+			{
+				return this._MaNXB;
+			}
+			set
+			{
+				if ((this._MaNXB != value))
+				{
+					this._MaNXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNXB", DbType="NVarChar(50)")]
+		public string TenNXB
+		{
+			get
+			{
+				return this._TenNXB;
+			}
+			set
+			{
+				if ((this._TenNXB != value))
+				{
+					this._TenNXB = value;
+				}
 			}
 		}
 	}
@@ -470,7 +486,7 @@ namespace SachOnline.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int MaKH
 		{
 			get
@@ -647,6 +663,204 @@ namespace SachOnline.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DONDATHANG")]
+	public partial class DONDATHANG
+	{
+		
+		private System.Nullable<int> _MaKH;
+		
+		private System.Nullable<int> _SoDH;
+		
+		private System.Nullable<System.DateTime> _NgayDH;
+		
+		private System.Nullable<System.DateTime> _NgayGiaoHang;
+		
+		private System.Nullable<bool> _HTGiaoHang;
+		
+		private System.Nullable<bool> _HTThanhToan;
+		
+		public DONDATHANG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int")]
+		public System.Nullable<int> MaKH
+		{
+			get
+			{
+				return this._MaKH;
+			}
+			set
+			{
+				if ((this._MaKH != value))
+				{
+					this._MaKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDH", DbType="Int")]
+		public System.Nullable<int> SoDH
+		{
+			get
+			{
+				return this._SoDH;
+			}
+			set
+			{
+				if ((this._SoDH != value))
+				{
+					this._SoDH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDH", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayDH
+		{
+			get
+			{
+				return this._NgayDH;
+			}
+			set
+			{
+				if ((this._NgayDH != value))
+				{
+					this._NgayDH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayGiaoHang", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgayGiaoHang
+		{
+			get
+			{
+				return this._NgayGiaoHang;
+			}
+			set
+			{
+				if ((this._NgayGiaoHang != value))
+				{
+					this._NgayGiaoHang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HTGiaoHang", DbType="Bit")]
+		public System.Nullable<bool> HTGiaoHang
+		{
+			get
+			{
+				return this._HTGiaoHang;
+			}
+			set
+			{
+				if ((this._HTGiaoHang != value))
+				{
+					this._HTGiaoHang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HTThanhToan", DbType="Bit")]
+		public System.Nullable<bool> HTThanhToan
+		{
+			get
+			{
+				return this._HTThanhToan;
+			}
+			set
+			{
+				if ((this._HTThanhToan != value))
+				{
+					this._HTThanhToan = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CTDATHANG")]
+	public partial class CTDATHANG
+	{
+		
+		private System.Nullable<int> _SoDH;
+		
+		private System.Nullable<int> _MaSach;
+		
+		private System.Nullable<int> _SoLuong;
+		
+		private System.Nullable<decimal> _DonGia;
+		
+		public CTDATHANG()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDH", DbType="Int")]
+		public System.Nullable<int> SoDH
+		{
+			get
+			{
+				return this._SoDH;
+			}
+			set
+			{
+				if ((this._SoDH != value))
+				{
+					this._SoDH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSach", DbType="Int")]
+		public System.Nullable<int> MaSach
+		{
+			get
+			{
+				return this._MaSach;
+			}
+			set
+			{
+				if ((this._MaSach != value))
+				{
+					this._MaSach = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> DonGia
+		{
+			get
+			{
+				return this._DonGia;
+			}
+			set
+			{
+				if ((this._DonGia != value))
+				{
+					this._DonGia = value;
+				}
 			}
 		}
 	}
